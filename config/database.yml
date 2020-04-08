@@ -1,0 +1,16 @@
+default: &default
+   adapter: postgresql
+   host: localhost
+   pool: 5
+
+development:
+  <<: *default
+  database: ashwink
+  username: <%= ENV['PG_USER'] %>
+  password: <%= ENV['PG_USER_PASS'] %>
+
+production:
+  <<: *default
+  database: ashwink
+  username: <%= ENV['PG_USER'] %>
+  password: <%= ENV['PG_USER_PASS'] %>
