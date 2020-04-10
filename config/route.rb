@@ -1,4 +1,4 @@
-require_relative '../initialiser/sinatra/routes/draw_routes'
+require_relative '../initialiser/sinatra/routes/dispatcher'
 
 Sinatra::Routes.draw do
   get '/', 'UserController#index'

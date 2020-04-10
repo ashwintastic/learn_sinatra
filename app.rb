@@ -13,13 +13,10 @@ require './config/route'
 
 
 
-
+reloadable = %w[controllers models controller_concerns views config_dir]
 configure :development do |c|
-  require 'sinatra/reloader'
-  c.also_reload "#{Sinatra::Application.controllers}/*.rb"
-  c.also_reload "#{Sinatra::Application.models}/*.rb"
-  c.also_reload "#{Sinatra::Application.controller_concerns}/*.rb"
-  c.also_reload "#{Sinatra::Application.views}/*.rb"
-  c.also_reload "#{Sinatra::Application.config_dir}/*.rb"
+  reloadable.each do |r|
+    c.also_reload "#{Sinatra::Application.send(r)}/*.rb"
+  end
 end
 

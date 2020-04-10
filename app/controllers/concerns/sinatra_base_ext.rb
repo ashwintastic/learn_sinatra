@@ -17,7 +17,7 @@ module SinatraExt
     end
 
     def get
-      params
+      @params
     end
 
     def post
@@ -26,11 +26,11 @@ module SinatraExt
     end
 
     def put
-      post
+      post.merge(@params)
     end
 
     def delete
-      post
+      put
     end
   end
 end

@@ -1,7 +1,7 @@
 module Sinatra
   module Routes
     class << self
-      def parser(url, call, verb)
+      def dispatch(url, call, verb)
         controller_class, method = call.split('#')
         controller_class = Object.const_get(controller_class)
 
@@ -13,19 +13,19 @@ module Sinatra
 
 
       def get(url, call)
-        parser(url, call, 'get')
+        dispatch(url, call, 'get')
       end
 
       def post(url, call)
-        parser(url, call, 'post')
+        dispatch(url, call, 'post')
       end
 
       def put(url, call)
-        parser(url, call, 'put' )
+        dispatch(url, call, 'put' )
       end
 
       def delete(url, call)
-        parser(url, call,  'delete')
+        dispatch(url, call,  'delete')
       end
 
       def draw(&block)

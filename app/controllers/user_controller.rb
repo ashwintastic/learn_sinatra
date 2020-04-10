@@ -13,10 +13,12 @@ class UserController < ApplicationController
 
 
   def create
-    { a: 20, b: 47, c: 909 }.to_json
+    { a: 20, b: 47, c: 90 }.to_json
   end
 
   def edit
+    p params
+    'hello'
   end
 
 
