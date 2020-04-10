@@ -1,33 +1,8 @@
-def parser(url, call, verb)
-  controller_class, method = call.split('#')
-  controller_class = Object.const_get(controller_class)
+require_relative '../initialiser/sinatra/routes/draw_routes'
 
-  Sinatra::Base.send(verb.to_sym, url) do
-    p params
-    controller_class.new!(self).send(method)
-  end
-
-
+Sinatra::Routes.draw do
+  get '/', 'UserController#index'
+  get '/user', 'UserController#list'
+  post '/user/new', 'UserController#create'
+  put '/user/:id/edit', 'UserController#edit'
 end
-
-
-def get_route(url, call)
-  parser(url, call, 'get')
-end
-
-def post_route(url, call)
-  parser(url, call, 'post')
-end
-
-def put_route(url, call)
-  parser(url, call, 'put' )
-end
-
-def delete_route(url, call)
-  parser(url, call,  'delete')
-end
-
-
-
-get_route '/', 'UserController#index'
-

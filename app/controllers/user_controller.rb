@@ -4,14 +4,23 @@ class UserController < ApplicationController
 
 
   def index
+    'lplplplplp'
     erb :index
   end
 
-  def self.create
-
+  def list
+    'rrrrrrrrrrrrrrrrrrrr'
   end
 
 
+  def create
+    binding.pry
+  end
+
+  def edit
+    binding.pry
+    'pp'
+  end
 
 
 end
