@@ -8,3 +8,5 @@ set :views, Proc.new { File.join(Sinatra::Application.root, '/app/views') }
 set :controllers, Proc.new { File.join(Sinatra::Application.root, '/app/controllers') }
 
 set :controller_concerns , Proc.new { File.join(controllers, '/concerns') }
+
+set :config_dir , Proc.new { File.join(Sinatra::Application.root, '/config') }

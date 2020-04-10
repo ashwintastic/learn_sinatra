@@ -4,23 +4,21 @@ class UserController < ApplicationController
 
 
   def index
-    'lplplplplp'
     erb :index
   end
 
   def list
-    'rrrrrrrrrrrrrrrrrrrr'
+
   end
 
 
   def create
-    binding.pry
+    { a: 20, b: 47, c: 909 }.to_json
   end
 
   def edit
-    binding.pry
-    'pp'
   end
 
 
 end
+
