@@ -32,5 +32,10 @@ module SinatraExt
     def delete
       put
     end
+
+    def views
+      sender_class = self.class.to_s.underscore.split('_')[0]
+      "#{Sinatra::Application.views}/#{sender_class}"
+    end
   end
 end

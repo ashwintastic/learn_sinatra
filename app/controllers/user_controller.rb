@@ -1,13 +1,15 @@
 class UserController < ApplicationController
-
+include UserHelper
 
 
 
   def index
-    erb :index
+    @ashwini = "ashwini from instance variable"
+    haml :index, { views: views }
   end
 
   def list
+
 
   end
 

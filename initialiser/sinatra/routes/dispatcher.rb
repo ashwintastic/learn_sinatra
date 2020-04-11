@@ -10,8 +10,6 @@ module Sinatra
         end
       end
 
-
-
       def get(url, call)
         dispatch(url, call, 'get')
       end
@@ -32,6 +30,5 @@ module Sinatra
         instance_eval &block
       end
     end
-
   end
 end
