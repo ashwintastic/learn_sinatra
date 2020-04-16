@@ -1,6 +1,8 @@
+# some comments
+
 module SinatraExt
   module SinatraBase
-    attr_accessor :params, :request, :response
+    attr_accessor :request, :response
 
     def initialize(sinatra_app)
       @params   = sinatra_app.params
@@ -9,20 +11,22 @@ module SinatraExt
       super
     end
 
-
     private
 
     def params
       send(request.request_method.downcase.to_sym)
     end
 
+
     def get
       @params
     end
 
     def post
+      indifferent_hash = Sinatra::IndifferentHash.new
       request.body.rewind
-      JSON.parse(request.body.read)
+      params = JSON.parse(request.body.read)
+      indifferent_hash.merge(params)
     end
 
     def put

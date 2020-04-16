@@ -3,7 +3,7 @@
 
   set :database_file, File.join(Sinatra::Application.root, '/config/database.yaml')
   set :db_yaml, File.join(Sinatra::Application.root, '/config/database.yaml')
-  set :env , ENV['ENV'] || 'default_env'
+  set :env , ENV['ENV'] || 'development'
 
 
 
