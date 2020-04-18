@@ -6,7 +6,7 @@ default_env: &default_env
 
 development:
   <<: *default_env
-  database: ashwink
+  database: ashwinik
   username: <%= ENV['PG_USER'] %>
   password: <%= ENV['PG_USER_PASS'] %>
 
